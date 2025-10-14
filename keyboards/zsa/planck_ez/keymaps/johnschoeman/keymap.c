@@ -39,11 +39,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Tab  |      | Alt  | CMD  |Lower |    Space    |Raise | Alt  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[_QWERTY] = LAYOUT_planck_grid(
+[_QWERTY] = LAYOUT_planck_mit(
      KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
     KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_ENT,
     KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
-     KC_TAB, XXXXXXX, KC_LALT, KC_LGUI,   LOWER,  KC_SPC,  KC_SPC,   RAISE, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX
+     KC_TAB, XXXXXXX, KC_LALT, KC_LGUI,   LOWER,  KC_SPC,   RAISE, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 /* Lower
@@ -57,11 +57,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[_LOWER] = LAYOUT_planck_grid(
+[_LOWER] = LAYOUT_planck_mit(
      KC_DEL, _______, _______, KC_MINS,  KC_EQL, _______, _______, KC_LBRC, KC_RBRC, _______, _______, _______,
      KC_GRV, _______, _______, KC_MINS,  S(KC_EQL), _______, KC_SCLN, S(KC_LBRC), S(KC_RBRC), _______, _______, KC_PIPE,
     _______, _______, _______, _______, _______, _______, KC_QUOT, S(KC_9), S(KC_0), _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
 /* Raise
@@ -75,11 +75,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[_RAISE] = LAYOUT_planck_grid(
+[_RAISE] = LAYOUT_planck_mit(
      KC_DEL, _______, _______, KC_MINS,  KC_EQL, _______, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______, _______,
      KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSLS,
     _______, _______, _______, _______, _______, _______, KC_QUOT, KC_SCLN, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
 /* Adjust (Lower + Raise)
@@ -94,11 +94,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |             |      |      |      |      | Wake |
  * `-----------------------------------------------------------------------------------'
  */
-[_ADJUST] = LAYOUT_planck_grid(
+[_ADJUST] = LAYOUT_planck_mit(
     _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4, _______, KC_MUTE, KC_VOLD, KC_VOLU, _______, KC_PWR, KC_SLEP,
     _______,   KC_F5,   KC_F6,   KC_F7,   KC_F8, _______, _______, KC_PGDN, KC_PGUP,  QWERTY,  PLOVER, _______,
     _______,   KC_F9,  KC_F10,  KC_F11,  KC_F12, _______, _______, KC_BRID, KC_BRIU, _______, QK_BOOT, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_WAKE
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_WAKE
 ),
 
 /* Plover layer (http://opensteno.org)
@@ -112,11 +112,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Exit |      |      |   A  |   O  |             |   E  |   U  |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[_PLOVER] = LAYOUT_planck_grid(
+[_PLOVER] = LAYOUT_planck_mit(
     KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1   ,
     XXXXXXX, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
     XXXXXXX, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    EXT_PLV, XXXXXXX, XXXXXXX, KC_C,    KC_V,    XXXXXXX, XXXXXXX, KC_N,    KC_M,    XXXXXXX, XXXXXXX, XXXXXXX
+    EXT_PLV, XXXXXXX, XXXXXXX, KC_C,    KC_V,    XXXXXXX, KC_N,    KC_M,    XXXXXXX, XXXXXXX, XXXXXXX
 )
 
 };
@@ -263,31 +263,31 @@ float melody[8][2][2] = {
 #define ET12_TRITONE 1.414214
 #define ET12_PERFECT_FIFTH 1.498307
 
-deferred_token tokens[8];
+// deferred_token tokens[8];
 
 uint32_t reset_note(uint32_t trigger_time, void *note) {
     *(float*)note = 440.0f;
     return 0;
 }
 
-bool play_encoder_melody(uint8_t index, bool clockwise) {
-    cancel_deferred_exec(tokens[index]);
-    if (clockwise) {
-        melody[index][1][0] = melody[index][1][0] * ET12_MINOR_SECOND;
-        melody[index][0][0] = melody[index][1][0] / ET12_PERFECT_FIFTH;
-        audio_play_melody(&melody[index], 2, false);
-    } else {
-        melody[index][1][0] = melody[index][1][0] / ET12_MINOR_SECOND;
-        melody[index][0][0] = melody[index][1][0] * ET12_TRITONE;
-        audio_play_melody(&melody[index], 2, false);
-    }
-    tokens[index] = defer_exec(1000, reset_note, &melody[index][1][0]);
-    return false;
-}
+// bool play_encoder_melody(uint8_t index, bool clockwise) {
+//     cancel_deferred_exec(tokens[index]);
+//     if (clockwise) {
+//         melody[index][1][0] = melody[index][1][0] * ET12_MINOR_SECOND;
+//         melody[index][0][0] = melody[index][1][0] / ET12_PERFECT_FIFTH;
+//         audio_play_melody(&melody[index], 2, false);
+//     } else {
+//         melody[index][1][0] = melody[index][1][0] / ET12_MINOR_SECOND;
+//         melody[index][0][0] = melody[index][1][0] * ET12_TRITONE;
+//         audio_play_melody(&melody[index], 2, false);
+//     }
+//     tokens[index] = defer_exec(1000, reset_note, &melody[index][1][0]);
+//     return false;
+// }
 
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    return play_encoder_melody(index, clockwise);
-}
+// bool encoder_update_user(uint8_t index, bool clockwise) {
+//     return play_encoder_melody(index, clockwise);
+// }
 
 bool dip_switch_update_user(uint8_t index, bool active) {
     switch (index) {
